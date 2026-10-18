@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ochrelle - Give AI a design sense.</title>
+  <meta name="description" content="Ochrelle is an open catalog of interface styles, layout patterns, and interaction paradigms for AI agents. Ten hand-built style demos plus the full 27-style catalog in vanilla HTML, CSS, and JavaScript - no frameworks, no build step.">
+  <meta name="theme-color" content="#FAFAF9">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#explorer">Skip to style explorer</a>
+
+  <!-- ============================================================
+       Zone 1 · Header / identity
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="wordmark" href="#top">Ochre<span class="wordmark-accent">lle</span><span class="wordmark-dot">.</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#explorer">Explorer</a>
+        <a href="https://github.com/izynu/ochrelle">GitHub</a>
+        <a href="https://github.com/izynu/ochrelle/tree/main/docs">Docs</a>
+      </nav>
+    </div>
+    <div class="container hero">
+      <p class="eyebrow">The design intelligence layer for AI agents</p>
+      <h1 class="hero-title">Give AI a design&nbsp;sense.</h1>
+      <p class="hero-purpose">
+        Ochrelle is an open catalog of interface styles, layout patterns, and interaction paradigms -
+        written for the agents that build software. Each entry pairs a working demo with principles
+        and honest trade-offs, so generated UI can be deliberate instead of default. Below: ten
+        hand-built demos plus the full 27-style catalog, one page, zero frameworks.
+      </p>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       Zone 2 · Style explorer
+       ============================================================ -->
+  <main id="top">
+    <section class="explorer container" id="explorer" aria-labelledby="explorer-title">
+      <div class="explorer-head">
+        <h2 id="explorer-title">Style explorer</h2>
+        <p class="explorer-note mono">10 hand-built demos · 27-style catalog · zero dependencies</p>
+      </div>
+
+      <div class="selector" role="tablist" aria-label="Interface styles">
+        <button type="button" class="selector-tab" id="tab-skeuo" role="tab" aria-selected="true" aria-controls="panel-skeuo"><span class="tab-num" aria-hidden="true">01</span>Skeuomorphism</button>
+        <button type="button" class="selector-tab" id="tab-neu" role="tab" aria-selected="false" aria-controls="panel-neu" tabindex="-1"><span class="tab-num" aria-hidden="true">02</span>Neumorphism</button>
+        <button type="button" class="selector-tab" id="tab-glass" role="tab" aria-selected="false" aria-controls="panel-glass" tabindex="-1"><span class="tab-num" aria-hidden="true">03</span>Glassmorphism</button>
+        <button type="button" class="selector-tab" id="tab-clay" role="tab" aria-selected="false" aria-controls="panel-clay" tabindex="-1"><span class="tab-num" aria-hidden="true">04</span>Claymorphism</button>
+        <button type="button" class="selector-tab" id="tab-brut" role="tab" aria-selected="false" aria-controls="panel-brut" tabindex="-1"><span class="tab-num" aria-hidden="true">05</span>Neo-brutalism</button>
+        <button type="button" class="selector-tab" id="tab-min" role="tab" aria-selected="false" aria-controls="panel-min" tabindex="-1"><span class="tab-num" aria-hidden="true">06</span>Minimalism</button>
+        <button type="button" class="selector-tab" id="tab-max" role="tab" aria-selected="false" aria-controls="panel-max" tabindex="-1"><span class="tab-num" aria-hidden="true">07</span>Maximalism</button>
+        <button type="button" class="selector-tab" id="tab-liquid" role="tab" aria-selected="false" aria-controls="panel-liquid" tabindex="-1"><span class="tab-num" aria-hidden="true">08</span>Liquid Glass</button>
+        <button type="button" class="selector-tab" id="tab-bento" role="tab" aria-selected="false" aria-controls="panel-bento" tabindex="-1"><span class="tab-num" aria-hidden="true">09</span>Bento Grid</button>
+        <button type="button" class="selector-tab" id="tab-spatial" role="tab" aria-selected="false" aria-controls="panel-spatial" tabindex="-1"><span class="tab-num" aria-hidden="true">10</span>Spatial UI</button>
+      </div>
+
+      <div class="panels">
+
+        <!-- 01 · Skeuomorphism -->
+        <section class="demo-panel" id="panel-skeuo" role="tabpanel" aria-labelledby="tab-skeuo" tabindex="0">
+          <header class="demo-meta">
+            <h3>Skeuomorphism</h3>
+            <p class="demo-type mono">Visual style</p>
+            <p class="demo-principle">
+              Digital objects imitate physical ones: brushed metal, soft depth, controls that look
+              pressable because they look holdable. Affordance is carried by material rendering
+              rather than by flat convention.
+            </p>
+            <p class="demo-when"><strong>Choose when</strong> the interface gains from tactile familiarity - media, tools, games - and users should read function straight from form.</p>
+          </header>
+          <div class="demo-stage demo-skeuo">
+            <div class="skeuo-player">
+              <span class="skeuo-screws" aria-hidden="true"></span>
+              <div class="skeuo-deck">
+                <div class="skeuo-vinyl" aria-hidden="true"><span class="skeuo-sheen"></span></div>
+                <div class="skeuo-info">
+                  <p class="skeuo-eyebrow mono">Now playing · Polar Static LP</p>
+                  <p class="skeuo-track">Aurora Fields - Neon Treeline</p>
+                  <p class="skeuo-time mono">1:24 / 3:58</p>
+                </div>
+              </div>
+              <div class="skeuo-controls">
+                <button type="button" class="skeuo-btn" aria-label="Previous track">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="5" width="2.6" height="14" rx="1"></rect><polygon points="19,5 9.5,12 19,19"></polygon></svg>
+                </button>
+                <button type="button" class="skeuo-btn skeuo-btn-main" id="skeuoPlay" aria-pressed="false" aria-label="Play or pause">
+                  <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="8,5 19,12 8,19"></polygon></svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="7" y="5" width="3.4" height="14" rx="1"></rect><rect x="13.6" y="5" width="3.4" height="14" rx="1"></rect></svg>
+                </button>
+                <button type="button" class="skeuo-btn" aria-label="Next track">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="16.4" y="5" width="2.6" height="14" rx="1"></rect><polygon points="5,5 14.5,12 5,19"></polygon></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 02 · Neumorphism -->
+        <section class="demo-panel" id="panel-neu" role="tabpanel" aria-labelledby="tab-neu" tabindex="0" hidden>
+          <header class="demo-meta">
+            <h3>Neumorphism</h3>
+            <p class="demo-type mono">Visual style</p>
+            <p class="demo-principle">
+              One monochrome surface, extruded and inset by twin soft shadows. Components appear
+              pressed into the same material as the page itself; hierarchy comes from light
+              direction, not from color.
+            </p>
+            <p class="demo-when"><strong>Choose when</strong> you need a calm, physical control surface - settings, remotes, kiosks - and color must stay out of the way.</p>
+          </header>
+          <div class="demo-stage demo-neu">
+            <div class="neu-scene">
+              <div class="neu-row">
+                <span class="neu-label" id="neu-mode-label">Ambient mode</span>
+                <button type="button" class="neu-switch" role="switch" aria-checked="true" aria-labelledby="neu-mode-label" id="neuSwitch">
+                  <span class="neu-thumb" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="neu-row neu-row-col">
+                <label class="neu-label" for="neuVolume">Master volume</label>
+                <div class="neu-slider-row">
+                  <input type="range" id="neuVolume" min="0" max="100" value="62">
+                  <output class="mono" id="neuVolumeOut" for="neuVolume">62</output>
+                </div>
+              </div>
+              <p class="neu-hint mono">Focus rings are 2px darker outlines</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 · Glassmorphism -->
+        <section class="demo-panel" id="panel-glass" role="tabpanel" aria-labelledby="tab-glass" tabindex="0" hidden>
+          <header class="demo-meta">
+            <h3>Glassmorphism</h3>
+            <p class="demo-type mono">Visual style</p>
+            <p class="demo-principle">
+              Frosted layers float above vivid content - blurred, saturated, edge-lit. Depth is
+              literal: you can see the world behind the glass, softly. The blur is progressively
+              enhanced; without it, the card falls back to a solid frosted fill.
+            </p>
+            <p class="demo-when"><strong>Choose when</strong> a floating layer must stay connected to the content behind it - notifications, overlays, media HUDs.</p>
+          </header>
+          <div class="demo-stage demo-glass">
+            <article class="glass-card">
+              <span class="glass-avatar" aria-hidden="true">NK</span>
+              <div class="glass-body">
+                <p class="glass-title"><strong>Nora Kim</strong><span class="glass-time mono">2m ago</span></p>
+                <p class="glass-text">mentioned you in <em>Q3 Brand Refresh</em> - “the new type ramp is in, take a look before standup?”</p>
+                <div class="glass-actions">
+                  <button type="button" class="glass-btn glass-btn-ghost">Reply</button>
+                  <button type="button" class="glass-btn glass-btn-solid">Open thread</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 04 · Claymorphism -->
+        <section class="demo-panel" id="panel-clay" role="tabpanel" aria-labelledby="tab-clay" tabindex="0" hidden>
+          <header class="demo-meta">
+            <h3>Claymorphism</h3>
+            <p class="demo-type mono">Visual style</p>
+            <p class="demo-principle">
+              Chunky, toy-like volumes in pastel fills, with a double shadow - a soft drop plus an
+              inner light along the bottom edge. Everything looks squeezable, and interaction
+              answers with a spring.
+            </p>
+            <p class="demo-when"><strong>Choose when</strong> warmth beats efficiency - habit trackers, kids’ products, friendly onboarding.</p>
+          </header>
+          <div class="demo-stage demo-clay">
+            <article class="clay-card">
+              <header class="clay-head">
+                <h4>Today</h4>
+                <span class="clay-count">3 tasks</span>
+              </header>
+              <label class="clay-item">
+                <input type="checkbox" class="clay-check" checked>
+                <span class="clay-text">Sketch onboarding flow</span>
+              </label>
+              <label class="clay-item">
+                <input type="checkbox" class="clay-check">
+                <span class="clay-text">Water the monstera</span>
+              </label>
+              <label class="clay-item">
+                <input type="checkbox" class="clay-check">
+                <span class="clay-text">Review PR #142</span>
+              </label>
+            </article>
+          </div>
+        </section>
+
+        <!-- 05 · Neo-brutalism -->
+        <section class="demo-panel" id="panel-brut" role="tabpanel" aria-labelledby="tab-brut" tabindex="0" hidden>
+          <header class="demo-meta">
+            <h3>Neo-brutalism</h3>
+            <p class="demo-type mono">Visual style</p>
+            <p class="demo-principle">
+              Raw black borders, hard offset shadows, flat saturated blocks, and type that shouts.
+              Honesty over polish - the structure itself is the decoration, and every press is
+              mechanical.
+            </p>
+            <p class="demo-when"><strong>Choose when</strong> personality and zero ambiguity matter - event pages, independent publications, tools that reject corporate gloss.</p>
+          </header>
+          <div class="demo-stage demo-brut">
+            <article class="brut-ticket">
+              <div class="brut-top">
+                <p class="brut-kicker">Kabelwerk Hall · Berlin</p>
+                <h4 class="brut-title">Raster Night 07</h4>
+              </div>
+              <div class="brut-grid">
+                <div class="brut-cell"><span class="brut-label">Date</span><span class="brut-value">Fri 14 Mar</span></div>
+                <div class="brut-cell"><span class="brut-label">Doors</span><span class="brut-value">23:00</span></div>
+                <div class="brut-cell"><span class="brut-label">Age</span><span class="brut-value">18+</span></div>
+                <div class="brut-cell brut-price"><span class="brut-label">Ticket</span><span class="brut-value">€18</span></div>
+              </div>
+              <div class="brut-tear" aria-hidden="true"></div>
+              <div class="brut-bottom">
+                <span class="brut-code" aria-hidden="true"></span>
+                <button type="button" class="brut-btn">Get ticket</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 06 · Minimalism -->
+        <section class="demo-panel" id="panel-min" role="tabpanel" aria-labelledby="tab-min" tabindex="0" hidden>
+          <header class="demo-meta">
+            <h3>Minimalism</h3>
+            <p class="demo-type mono">Visual style</p>
+            <p class="demo-principle">
+              Every element earns its place: hairline rules, a single accent, a precise type scale,
+              and whitespace doing the grouping. Feedback stays quiet - 200ms fades, nothing more.
+            </p>
+            <p class="demo-when"><strong>Choose when</strong> content must outrank chrome - reading, writing, and reference tools where trust is built through restraint.</p>
+          </header>
+          <div class="demo-stage demo-min">
+            <div class="min-scene">
+              <p class="min-kicker mono">The Ledger · Issue 214</p>
+              <h4>Field notes on interface craft</h4>
+              <p class="min-copy">One short letter, every Thursday. What we changed in our UI this week - and the one thing we got wrong.</p>
+              <hr class="min-rule">
+              <form class="min-form" id="minForm">
+                <label class="min-label mono" for="minEmail">Email address</label>
+                <div class="min-row">
+                  <input class="min-input" id="minEmail" name="email" type="email" placeholder="ada@lovelace.dev" autocomplete="email" required>
+                  <button type="submit" class="min-btn">Subscribe</button>
+                </div>
+                <p class="min-note" id="minNote" role="status">No tracking. Unsubscribe in one click.</p>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- 07 · Maximalism -->
+        <section class="demo-panel" id="panel-max" role="tabpanel" aria-labelledby="tab-max" tabindex="0" hidden>
+          <header class="demo-meta">
+            <h3>Maximalism</h3>
+            <p class="demo-type mono">Visual style</p>
+            <p class="demo-principle">
+              More, but composed: layered type, patterned fields, stickers, and saturated hues
+              arranged around one undeniable focal point. A readability island keeps the copy
+              legible inside the noise.
+            </p>
+            <p class="demo-when"><strong>Choose when</strong> the job is to be unforgettable - drops, campaigns, merch, and anything fighting for attention in a crowded feed.</p>
+          </header>
+          <div class="demo-stage demo-max">
+            <article class="max-banner">
+              <span class="max-badge max-badge-a">One day only</span>
+              <p class="max-kicker mono">Rotterdam · Van Neli Fabriek</p>
+              <h4 class="max-title"><em>Loop</em> Fair ’25</h4>
+              <div class="max-island">
+                <p class="max-copy">Forty makers, one warehouse, a few thousand watts. Synths, pedals, modular corners, and a repair bar that fixes what you broke in 2019.</p>
+                <p class="max-meta">Sat 21 June · Doors 11:00 · Free before noon</p>
+              </div>
+              <span class="max-badge max-badge-b">Bring ears</span>
+            </article>
+          </div>
+        </section>
+
+        <!-- 08 · Liquid Glass (web approximation) -->
+        <section class="demo-panel" id="panel-liquid" role="tabpanel" aria-labelledby="tab-liquid" tabindex="0" hidden>
+          <header class="demo-meta">
+            <h3>Liquid Glass <span class="demo-sub">(web approximation)</span></h3>
+            <p class="demo-type mono">Platform material</p>
+            <p class="demo-principle">
+              Translucent controls sit on a living backdrop: blur, saturation boost, and a specular
+              top edge make the interface feel like one continuous optical layer. This is a web
+              approximation - the native material’s true lensing and refraction are not reproduced.
+            </p>
+            <p class="demo-when"><strong>Choose when</strong> your product lives on Apple platforms - or borrows their material language - and the backdrop is part of the content.</p>
+          </header>
+          <div class="demo-stage demo-liquid">
+            <div class="liquid-backdrop" id="liquidBackdrop" aria-hidden="true">
+              <span class="liquid-blob liquid-blob-a"></span>
+              <span class="liquid-blob liquid-blob-b"></span>
+              <span class="liquid-blob liquid-blob-c"></span>
+            </div>
+            <div class="liquid-content">
+              <div class="liquid-pill" role="group" aria-label="Playback controls">
+                <button type="button" class="liquid-btn" aria-label="Previous track">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="5" width="2.6" height="14" rx="1"></rect><polygon points="19,5 9.5,12 19,19"></polygon></svg>
+                </button>
+                <button type="button" class="liquid-btn liquid-btn-main" aria-label="Play or pause">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="8,5 19,12 8,19"></polygon></svg>
+                </button>
+                <button type="button" class="liquid-btn" aria-label="Next track">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="16.4" y="5" width="2.6" height="14" rx="1"></rect><polygon points="5,5 14.5,12 5,19"></polygon></svg>
+                </button>
+              </div>
+              <button type="button" class="liquid-pause mono" id="liquidPause" aria-pressed="false">Pause backdrop</button>
+              <p class="liquid-note">Web approximation of Apple’s Liquid Glass material - <a href="/#skills">see the catalog</a>. The native material’s lensing is <strong>not</strong> reproduced here.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 09 · Bento Grid -->
+        <section class="demo-panel" id="panel-bento" role="tabpanel" aria-labelledby="tab-bento" tabindex="0" hidden>
+          <header class="demo-meta">
+            <h3>Bento Grid</h3>
+            <p class="demo-type mono">Layout pattern</p>
+            <p class="demo-principle">
+              A 12-column grid of rounded tiles with varied spans. Size encodes priority - the
+              biggest tile carries the most important fact - and DOM order mirrors visual order.
+              The grid reflows from 12 columns to 6 to 2 as the viewport narrows.
+            </p>
+            <p class="demo-when"><strong>Choose when</strong> many small facts must scan as one glanceable composition - dashboards, profile pages, status screens.</p>
+          </header>
+          <div class="demo-stage demo-bento">
+            <div class="bento">
+              <article class="bento-tile b6">
+                <p class="bento-label mono">Now playing</p>
+                <div class="bento-now">
+                  <span class="bento-art" aria-hidden="true"></span>
+                  <div class="bento-now-text">
+                    <p class="bento-strong">Neon Treeline</p>
+                    <p class="bento-sub">Aurora Fields · Polar Static</p>
+                  </div>
+                  <span class="bento-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                </div>
+                <div class="bento-progress" role="progressbar" aria-label="Track progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="35"><span style="width:35%"></span></div>
+                <p class="bento-sub mono">1:24 / 3:58</p>
+              </article>
+              <article class="bento-tile b3">
+                <p class="bento-label mono">Monthly listeners</p>
+                <p class="bento-num">48,204</p>
+                <p class="bento-delta">+12.4% vs June</p>
+                <span class="bento-bars" aria-hidden="true"><i style="height:42%"></i><i style="height:64%"></i><i style="height:50%"></i><i style="height:86%"></i><i style="height:100%"></i></span>
+              </article>
+              <article class="bento-tile b3">
+                <p class="bento-label mono">Top track</p>
+                <p class="bento-strong">Static Bloom</p>
+                <p class="bento-sub">2:58 · 1.2M plays</p>
+              </article>
+              <article class="bento-tile b4">
+                <p class="bento-label mono">Up next</p>
+                <ul class="bento-list">
+                  <li>Halogen Kiss</li>
+                  <li>Slow Antenna</li>
+                  <li>Polar Static</li>
+                </ul>
+              </article>
+              <article class="bento-tile b4">
+                <p class="bento-label mono">Output</p>
+                <p class="bento-strong">Studio monitors</p>
+                <p class="bento-sub">Connected · 48 kHz</p>
+              </article>
+              <article class="bento-tile b4">
+                <p class="bento-label mono">Storage</p>
+                <p class="bento-num">68%</p>
+                <div class="bento-progress bento-progress-thin" role="progressbar" aria-label="Library storage used" aria-valuemin="0" aria-valuemax="100" aria-valuenow="68"><span style="width:68%"></span></div>
+              </article>
+              <article class="bento-tile b4">
+                <p class="bento-label mono">Streak</p>
+                <p class="bento-strong">14 days in a row</p>
+                <span class="bento-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span>
+              </article>
+              <article class="bento-tile b8">
+                <p class="bento-label mono">Tip</p>
+                <p class="bento-copy">Set a nightly loudness target so late-night listening stops flattening your mixes. Ochrelle will normalize new imports against it automatically.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- 10 · Spatial UI -->
+        <section class="demo-panel" id="panel-spatial" role="tabpanel" aria-labelledby="tab-spatial" tabindex="0" hidden>
+          <header class="demo-meta">
+            <h3>Spatial UI <span class="demo-sub">(2D spatial-inspired)</span></h3>
+            <p class="demo-type mono">Interaction paradigm</p>
+            <p class="demo-principle">
+              Elements occupy depth: planes at different translateZ respond to pointer position with
+              restrained parallax - never more than 8px - and hover lifts a card out of the scene.
+              Motion expresses hierarchy, not decoration.
+            </p>
+            <p class="demo-when"><strong>Choose when</strong> hierarchy can be physical space - showcases, concept pieces, visionOS-inspired screens.</p>
+          </header>
+          <div class="demo-stage demo-spatial">
+            <div class="sp-stage" id="spatialStage">
+              <div class="sp-scene">
+                <article class="sp-card sp-a">
+                  <p class="sp-label mono">Now playing</p>
+                  <p class="sp-strong">Aurora Fields</p>
+                  <p class="sp-sub">Neon Treeline · 1:24</p>
+                </article>
+                <article class="sp-card sp-b">
+                  <p class="sp-label mono">Lyrics</p>
+                  <p class="sp-copy">“We drove until the lights ran out, then let the treeline hum.”</p>
+                </article>
+                <article class="sp-card sp-c">
+                  <p class="sp-label mono">Up next</p>
+                  <p class="sp-strong">Static Bloom</p>
+                  <p class="sp-sub">in 12 tracks · Auto-queue</p>
+                </article>
+              </div>
+              <p class="sp-hint mono">Move the pointer across the stage - parallax stays under 8px</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       Zone 2b · Full style catalog (27 skills; first ten have demos above)
+       ============================================================ -->
+  <section class="catalog" aria-labelledby="catalog-title">
+    <div class="container">
+      <div class="catalog-head">
+        <h2 id="catalog-title">Full style catalog</h2>
+        <p class="explorer-note mono">27 skills · install any of them with scripts/install.sh</p>
+      </div>
+      <p class="catalog-intro">Every entry below ships as a self-contained Agent Skill: a SKILL.md with art-direction rules, tokens, runnable component recipes, and a quality checklist. The first ten have working demos in the explorer above; the rest are documented in their SKILL.md.</p>
+      <ul class="catalog-grid">
+        <li><span class="cat-name mono">ochrelle-skeuomorphism</span><span class="cat-family">demo above</span><p>Real-object metaphors and tactile controls that teach function through form.</p></li>
+        <li><span class="cat-name mono">ochrelle-neumorphism</span><span class="cat-family">demo above</span><p>Soft-UI extruded surfaces on monochrome, low-stimulation scenes.</p></li>
+        <li><span class="cat-name mono">ochrelle-glassmorphism</span><span class="cat-family">demo above</span><p>Frosted translucent layers floating over vivid media.</p></li>
+        <li><span class="cat-name mono">ochrelle-claymorphism</span><span class="cat-family">demo above</span><p>Puffy, friendly shapes with double shadows for playful products.</p></li>
+        <li><span class="cat-name mono">ochrelle-brutalism</span><span class="cat-family">demo above</span><p>Raw structure and hard borders; honesty over polish.</p></li>
+        <li><span class="cat-name mono">ochrelle-minimalism</span><span class="cat-family">demo above</span><p>Swiss-grounded reduction: typography and whitespace do the work.</p></li>
+        <li><span class="cat-name mono">ochrelle-maximalism</span><span class="cat-family">demo above</span><p>Expressive density and layered type, kept under strict control.</p></li>
+        <li><span class="cat-name mono">ochrelle-liquid-glass</span><span class="cat-family">demo above</span><p>Apple's adaptive Liquid Glass and honest web approximations.</p></li>
+        <li><span class="cat-name mono">ochrelle-bento-grid</span><span class="cat-family">demo above</span><p>Modular tile layouts sized by information priority.</p></li>
+        <li><span class="cat-name mono">ochrelle-spatial-ui</span><span class="cat-family">demo above</span><p>Depth, scale, and environment-aware interaction.</p></li>
+        <li><span class="cat-name mono">ochrelle-flat-design</span><span class="cat-family">SKILL.md</span><p>Solid fills, simple geometry, typography-first hierarchy. The 2013 reset.</p></li>
+        <li><span class="cat-name mono">ochrelle-material-design</span><span class="cat-family">SKILL.md</span><p>Google's paper-and-ink system: elevation, FABs, physical motion.</p></li>
+        <li><span class="cat-name mono">ochrelle-neo-brutalism</span><span class="cat-family">SKILL.md</span><p>Thick borders, hard offset shadows, saturated flats. Controlled roughness.</p></li>
+        <li><span class="cat-name mono">ochrelle-y2k</span><span class="cat-family">SKILL.md</span><p>Translucent plastics, chrome gradients, bubble UI. Dot-com optimism.</p></li>
+        <li><span class="cat-name mono">ochrelle-cyberpunk</span><span class="cat-family">SKILL.md</span><p>Neon noir on near-black: magenta and cyan against the dark.</p></li>
+        <li><span class="cat-name mono">ochrelle-retro-design</span><span class="cat-family">SKILL.md</span><p>Mid-century warmth: cream, burnt orange, groovy type, halftone.</p></li>
+        <li><span class="cat-name mono">ochrelle-editorial-design</span><span class="cat-family">SKILL.md</span><p>Magazine craft on the web: dominant type, decks, pull quotes, grids.</p></li>
+        <li><span class="cat-name mono">ochrelle-memphis-design</span><span class="cat-family">SKILL.md</span><p>1981 Milan postmodernism: squiggles, terrazzo, deliberate clashing.</p></li>
+        <li><span class="cat-name mono">ochrelle-japandi</span><span class="cat-family">SKILL.md</span><p>Japanese restraint meets Scandinavian warmth. Muted naturals, calm.</p></li>
+        <li><span class="cat-name mono">ochrelle-frutiger-aero</span><span class="cat-family">SKILL.md</span><p>Glossy optimism: aqua gel, glass shine, nature fused with tech.</p></li>
+        <li><span class="cat-name mono">ochrelle-corporate-memphis</span><span class="cat-family">SKILL.md</span><p>Flat vector illustration systems, honest about their trade-offs.</p></li>
+        <li><span class="cat-name mono">ochrelle-vaporwave</span><span class="cat-family">SKILL.md</span><p>VHS nostalgia, statues, sunset gradients, mall-era memory.</p></li>
+        <li><span class="cat-name mono">ochrelle-pixel-art</span><span class="cat-family">SKILL.md</span><p>8-bit discipline: limited palettes, crisp pixels, integer scaling.</p></li>
+        <li><span class="cat-name mono">ochrelle-terminal-console</span><span class="cat-family">SKILL.md</span><p>Monospace grids, box-drawing frames, phosphor on near-black.</p></li>
+        <li><span class="cat-name mono">ochrelle-hand-drawn</span><span class="cat-family">SKILL.md</span><p>Sketchbook borders, doodles, paper texture. Warmth by hand.</p></li>
+        <li><span class="cat-name mono">ochrelle-art-deco</span><span class="cat-family">SKILL.md</span><p>1920s geometry and gold: sunbursts, symmetry, marquee luxury.</p></li>
+        <li><span class="cat-name mono">ochrelle-futuristic-hud</span><span class="cat-family">SKILL.md</span><p>Film-grade telemetry panels: thin strokes, brackets, glow done safely.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Zone 3 · Footer
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-line"><strong>Ochrelle</strong> - an open catalog of interface styles for AI agents. This showcase is hand-built: three files, no frameworks, no build step.</p>
+      <nav class="footer-nav" aria-label="Documentation">
+        <a href="index.html">Showcase</a>
+        <a href="https://github.com/izynu/ochrelle">GitHub repository</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">License and terms</a>
+      </nav>
+      <p class="footer-copy mono">© <span id="year">2026</span> Zynu · MIT</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

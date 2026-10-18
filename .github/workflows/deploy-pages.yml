@@ -1,0 +1,96 @@
+# Builds the full website (website/) as a static export and deploys it to
+# GitHub Pages. This is the only hosting the project needs: one repository,
+# one workflow, free hosting.
+#
+# One-time setup after the first push: repository Settings > Pages >
+# Build and deployment > Source: "GitHub Actions".
+#
+# Custom domain: commit a CNAME file at the repository root containing your
+# domain (one line, for example "ochrelle.example.com"). This workflow
+# detects the file, rebuilds the site for the domain root (no base path,
+# matching metadata), and publishes the CNAME marker with the site.
+# Full walkthrough: DEPLOY.md at the repository root.
+
+name: Deploy website to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Decide site URL and base path
+        id: config
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          if [ -f CNAME ]; then
+            DOMAIN="$(tr -d '[:space:]' < CNAME)"
+            echo "base_path=" >> "$GITHUB_OUTPUT"
+            echo "site_url=https://${DOMAIN}" >> "$GITHUB_OUTPUT"
+          else
+            echo "base_path=/${REPO_NAME}" >> "$GITHUB_OUTPUT"
+            echo "site_url=https://${GITHUB_REPOSITORY_OWNER}.github.io/${REPO_NAME}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install dependencies
+        working-directory: website
+        run: bun install --frozen-lockfile
+
+      - name: Build the static site
+        working-directory: website
+        env:
+          NEXT_PUBLIC_STATIC_EXPORT: "1"
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.config.outputs.base_path }}
+          NEXT_PUBLIC_SITE_URL: ${{ steps.config.outputs.site_url }}
+        run: bun run build
+
+      - name: Finalize the output folder
+        run: |
+          # GitHub Pages ignores folders starting with an underscore unless
+          # this marker file exists. Next.js assets live in _next/.
+          touch website/out/.nojekyll
+          if [ -f CNAME ]; then
+            cp CNAME website/out/CNAME
+          fi
+
+      - name: Verify the build output
+        run: |
+          test -f website/out/index.html || { echo "::error::index.html is missing"; exit 1; }
+          test -f website/out/privacy/index.html || { echo "::error::privacy page is missing"; exit 1; }
+          test -f website/out/terms/index.html || { echo "::error::terms page is missing"; exit 1; }
+          test -f website/out/showcase/index.html || { echo "::error::showcase is missing"; exit 1; }
+          test -f website/out/.nojekyll || { echo "::error::.nojekyll is missing"; exit 1; }
+
+      - name: Upload the site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: website/out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

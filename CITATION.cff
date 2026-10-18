@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: Ochrelle
+message: >-
+  If you use Ochrelle in your research, teaching, or projects, please cite it
+  using this metadata.
+type: software
+authors:
+  - name: "Zynu"
+    website: "https://github.com/izynu"
+  - name: "Shraddha"
+    website: "https://github.com/xhraddha"
+version: 2.0.0
+date-released: 2026-10-18
+license: MIT
+repository-code: "https://github.com/izynu/ochrelle"
+abstract: >-
+  Ochrelle is an open-source ecosystem of Agent Skills for design intelligence:
+  a master skill for style selection plus 27 specialist skills spanning visual
+  styles, layout patterns, period aesthetics, and thematic genres (from
+  skeuomorphism and minimalism to vaporwave and futuristic HUD) with WCAG 2.2 AA
+  guidance for AI agents.
+keywords:
+  - design
+  - agent-skills
+  - ui
+  - ux
+  - design-systems

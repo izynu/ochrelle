@@ -1,0 +1,7 @@
+# Python caches from running the validators and test suite
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# OS artifacts
+.DS_Store
