@@ -334,7 +334,7 @@ Ochrelle is maintained by **Zynu** ([@izynu](https://github.com/izynu)) and **Sh
 
 ## License
 
-[MIT](LICENSE). Skills are documentation and code samples; use them freely, including commercially, with attribution appreciated but not required beyond the license notice.
+[MIT](LICENSE). Skills are documentation and code samples , use them freely, including commercially, with attribution appreciated but not required beyond the license notice.
 
 ---
 
